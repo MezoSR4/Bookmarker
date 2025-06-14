@@ -130,7 +130,7 @@ function addWebsites()
   }
 
 var allRegex = {
-webName: /^[A-Z][A-Za-z0-9 ]+$/,
+webName: /^[A-Z][A-Za-z0-9]+$/,
 webUrl: /^((http|https):\/\/)www\.([A-za-z0-9]+)\.(com|(edu\.eg))/,
 };
 
