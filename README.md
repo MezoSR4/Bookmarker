@@ -1,2 +1,0 @@
-# Bookmarker
-Bookmark app

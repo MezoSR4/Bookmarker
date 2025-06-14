@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Bookmarker</title>
+  </head>
+
+  <body>
+    <div
+      class="container d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1 class="text-center position-relative text-black m-5">Bookmarker</h1>
+
+      <div class="w-100 ay7aga ">
+        <div
+          class="bookmark-body w-100 d-flex flex-column justify-content-center align-items-center fw-bold"
+        >
+          <h3>
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h3>
+        </div>
+
+        <div class="mt-3 text-black fw-semibold">
+          <div class="mt-5 mb-3">
+            <label>
+              <i class="fa-solid fa-file-signature"></i> Website Name:
+            </label>
+            <input
+              id="webName"
+              type="text"
+              class="form-control"
+              placeholder="ex: Bookmarker"
+              oninput="validateData('webName' , 'webNameAlertId')"
+            />
+            <p class="alert alert-danger d-none" id="webNameAlertId">
+              Product name must start with capital letter
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <label> <i class="fa-solid fa-link"></i> Website URL: </label>
+            <input
+              id="webUrl"
+              type="url"
+              class="form-control"
+              placeholder="ex : https://www.Bookmarker.com"
+              oninput="validateData('webUrl' , 'webURLAlertId')"
+            />
+            <p class="alert alert-danger d-none" id="webURLAlertId">
+              Please Enter Valid URL
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <label>
+              <i class="fa-solid fa-keyboard"></i> Website Description:
+            </label>
+            <textarea id="webDesc" class="form-control"></textarea>
+          </div>
+
+          <button id="btnAdd" class="btn btn-primary" onclick="addWebsites()">
+            Add Product
+          </button>
+          <button
+            id="btnUpdate"
+            class="btn btn-warning text-white d-none "
+            onclick="updateWebsite()"
+          >
+            Update Product
+          </button>
+        </div>
+      </div>
+
+      <input
+        oninput="searchWebsite()"
+        id="pSearch"
+        type="text"
+        class="w-50 mx-auto form-control my-5"
+        placeholder="Search"
+      />
+      <table class="w-75 mx-auto text-center">
+        <thead class=" ">
+          <th class="text-primary">Index</th>
+          <th class="text-primary">Name</th>
+          <th class="text-primary">Description</th>
+          <th class="text-primary">URL</th>
+          <th class="text-warning">Update</th>
+          <th class="text-danger">Delete</th>
+        </thead>
+        <tbody id="tBody"></tbody>
+      </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Main.js"></script>
+  </body>
+</html>
